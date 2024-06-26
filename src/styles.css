@@ -1,163 +1,176 @@
-body {
-    font-family: Arial, sans-serif;
-    color: #333;
+* {
     margin: 0;
     padding: 0;
-    background: radial-gradient(40.73% 31.04% at 69.51% 54.93%, #F4B2D6 0%, #FFF 100%);;
+    box-sizing: border-box;
 }
 
-.logo{
-    height: 30vh;
-    align-self: flex-start;
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: radial-gradient(40.73% 31.04% at 69.51% 54.93%, #F4B2D6 0%, #FFF 100%);
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    flex-direction: column; /* Ajusta el cuerpo a una columna para alinear el contenido verticalmente */
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.logo {
+    margin-right: auto; /* Empuja el logo hacia la izquierda */
+    width: 200px;
 }
 
 .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "content-wrapper phone"
+        "content-wrapper phone";
+    gap: 20px;
+    width: 100vw;
+    flex: 1; /* Hace que el contenedor ocupe todo el espacio vertical restante */
+}
+
+
+
+.content-wrapper {
+    grid-area: content-wrapper;
     display: flex;
-    align-items: center;
-    padding: 20px;
-    gap: 20px; 
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea el contenido arriba */
+    align-items: flex-start;
+    padding-left: 9%;
 }
 
 .content {
-    flex: 1;
- 
-}
-
-
-.content h1 {
-    color: var(--bili6, #DB2777);
-    font-family: Poppins;
-    font-size: 40.483px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%; 
-    letter-spacing: 0.067px;
-
     display: flex;
-    width: 518.76px;
-    height: 131px;
     flex-direction: column;
     justify-content: center;
-    flex-shrink: 0;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+.content h1 {
+    color: #DB2777;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3em;
+    font-weight: 700;
+    padding-top: 9%;
 }
 
 .content p {
-    display: flex;
-    width: 482px;
-    height: 65px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-
     color: #2D2B2E;
-    font-family: "DM Sans";
-    font-size: 25px;
-    font-style: normal;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.5em;
     font-weight: 400;
-    line-height: 110%; 
-    letter-spacing: 0.052px;
+}
+
+.signup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    position: relative; 
+    padding-top: 4.5%;
 }
 
 .signup h2 {
-    display: flex;
-    width: 529px;
-    height: 32px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-
-    color: var(--bili6, #DB2777);
-    font-family: Poppins;
-    font-size: 25px;
-    font-style: normal;
+    color: #DB2777;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75em;
     font-weight: 400;
-    line-height: 110%; 
-    letter-spacing: 0.052px;
-}
-
-.signup h3 {
-    display: flex;
-    width: 529px;
-    height: 32px;
-    flex-direction: column;
-    justify-content: center;
-    flex-shrink: 0;
-
-    color: #2D2B2E;
-    font-family: "DM Sans";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 110%; 
-    letter-spacing: 0.052px;
 }
 
 .signup input {
     padding: 10px;
     font-size: 1em;
-    width: 80%;
-    max-width: 300px;
-    margin-bottom: 10px;
+    width: 100%;
+    max-width: 400px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
+
 .signup button {
-    padding: 10px 20px;
+    padding: 11px 20px;
     font-size: 1em;
     background: #e91e63;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 4px;
+    position: absolute;
+    right: 0;
+    bottom: 0; /* Ajustar la posición vertical */
+    margin-top: 10px; /* Ajustar si es necesario */
+    margin-right: -50px; /* Ajustar si es necesario */
+    box-sizing: border-box; 
 }
-
-
-
-.phone-image {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
-    background: url(mockup.png) lightgray 50% / cover no-repeat;
-    margin-left:300px;
-    margin-top:87px;
-}
-
-.phone-image img {
-    width: 50%; 
-    height: auto;
-}
-
-
-.waitlist {
-    margin-top: 20px;
-}
-
-.waitlist form {
+.download-buttons {
     display: flex;
     gap: 10px;
+    justify-content: flex-start;
+    margin-top: 2%;
+    
 }
 
-.waitlist input {
-    flex: 1;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    
+    flex-shrink: 0;
+    border-radius: 5.815px;
+    border: 2.907px solid #FFF;
+    background: #FFF;
+    box-shadow: 0px 47.973px 74.14px 0px rgba(0, 0, 0, 0.08), 0px 14.462px 22.351px 0px rgba(0, 0, 0, 0.06), 0px 6.007px 9.283px 0px rgba(0, 0, 0, 0.04), 0px 2.173px 3.358px 0px rgba(0, 0, 0, 0.03);
 }
 
-
-.download-buttons {
-    margin-top: 20px;
+.button img {
+    height: 30px;
 }
 
-.download-buttons a {
-    margin-right: 10px;
+.button span {
+    color: var(--bili6, #DB2777);
+    font-family: Poppins;
+    font-style: normal;
+    letter-spacing: 0.052px;
+    font-size: 14px;
+    line-height: 1.2;
 }
 
-.download-buttons img {
-    height: 40px;
+.button.google-play span {
+    color: #000; /* You can adjust the color if needed */
 }
 
+.button.app-store span {
+    color: #000; /* You can adjust the color if needed */
+}
+
+.phone {
+    grid-area: phone;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.phone-image {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+}
